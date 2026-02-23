@@ -26,19 +26,25 @@ function TodosViewForm({
         <label>
           Search todos:
           <input
+            className="inputSearch"
             type="text"
             value={localQueryString}
             onChange={(e) => setLocalQueryString(e.target.value)}
           />
         </label>
-        <button type="button" onClick={() => setLocalQueryString('')}>
+        <button
+          className="buttonClear"
+          type="button"
+          onClick={() => setLocalQueryString('')}
+        >
           Clear
         </button>
       </div>
       <div>
-        <label>
+        <label className="labelTemplate">
           Sort by:
           <select
+            className="selectTemplate"
             value={sortField}
             onChange={(e) => onSortFieldChange(e.target.value)}
           >
@@ -46,9 +52,10 @@ function TodosViewForm({
             <option value="title">Title</option>
           </select>
         </label>
-        <label>
+        <label className="labelTemplate">
           Direction:
           <select
+            className="selectTemplate"
             value={sortDirection}
             onChange={(e) => onSortDirectionChange(e.target.value)}
           >

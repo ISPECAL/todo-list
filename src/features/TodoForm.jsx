@@ -21,7 +21,7 @@ function TodoForm({ onAddTodo, isSaving }) {
         labelText="Todo"
       />
 
-      <button type="submit" disabled={workingTodo === ''}>
+      <button className="buttonAddTodo" type="submit" disabled={workingTodo === ''}>
         {isSaving ? 'Saving...' : 'Add Todo'}
       </button>
     </form>
