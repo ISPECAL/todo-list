@@ -4,6 +4,8 @@ import TodoForm from './features/TodoForm';
 import { useState, useEffect } from 'react';
 import TodosViewForm from './features/TodosViewForm';
 import { useCallback } from 'react';
+import './index.css';
+import styles from './App.module.css';
 
 const url = `https://api.airtable.com/v0/${import.meta.env.VITE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}`;
 
@@ -83,10 +85,7 @@ function App() {
 
     try {
       setIsSaving(true);
-      const resp = await fetch(
-        encodeUrl(),
-        options
-      );
+      const resp = await fetch(encodeUrl(), options);
 
       if (!resp.ok) {
         throw new Error(resp.statusText);
@@ -138,10 +137,7 @@ function App() {
 
     try {
       setIsSaving(true);
-      const resp = await fetch(
-        encodeUrl(),
-        options
-      );
+      const resp = await fetch(encodeUrl(), options);
       if (!resp.ok) {
         throw new Error(resp.statusText);
       }
@@ -168,8 +164,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className={styles.appContainer}>
       <h1>My Todos</h1>
+      <img
+        src="src\assets\TODO.png"
+        alt="Todo logo"
+        className={styles.todoImage}
+      />
 
       <TodoForm onAddTodo={addTodo} isSaving={isSaving} />
       <TodoList
@@ -188,7 +189,7 @@ function App() {
         setQueryString={setQueryString}
       />
       {errorMessage && (
-        <div>
+        <div className={styles.errorContainer}>
           <hr />
           <p>{errorMessage}</p>
           <button onClick={() => setErrorMessage('')}>Dismiss</button>

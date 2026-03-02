@@ -1,4 +1,14 @@
 import { useState, useEffect } from 'react';
+import styled from 'styled-components';
+const InputSearch = styled.input`
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #0533af;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+`;
 
 function TodosViewForm({
   sortField,
@@ -25,20 +35,25 @@ function TodosViewForm({
       <div>
         <label>
           Search todos:
-          <input
+          <InputSearch
             type="text"
             value={localQueryString}
             onChange={(e) => setLocalQueryString(e.target.value)}
           />
         </label>
-        <button type="button" onClick={() => setLocalQueryString('')}>
+        <button
+          className="buttonClear"
+          type="button"
+          onClick={() => setLocalQueryString('')}
+        >
           Clear
         </button>
       </div>
       <div>
-        <label>
+        <label className="labelTemplate">
           Sort by:
           <select
+            className="selectTemplate"
             value={sortField}
             onChange={(e) => onSortFieldChange(e.target.value)}
           >
@@ -46,9 +61,10 @@ function TodosViewForm({
             <option value="title">Title</option>
           </select>
         </label>
-        <label>
+        <label className="labelTemplate">
           Direction:
           <select
+            className="selectTemplate"
             value={sortDirection}
             onChange={(e) => onSortDirectionChange(e.target.value)}
           >
