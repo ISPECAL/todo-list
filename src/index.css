@@ -27,26 +27,6 @@
   border: none;
 }
 
-.buttonAddTodo {
-  background-color: rgb(30, 189, 9);
-  color: white;
-  border: 2px solid rgb(28, 173, 9);
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 4px;
-  margin: 5px;
-  font-weight: bold;
-}
-
-.buttonAddTodo:disabled {
-  font-style: italic;
-}
-
-.buttonAddTodo:hover {
-  background-color: rgb(20, 123, 6);
-  border: none;
-}
-
 .buttonClear {
   background-color: rgb(230, 102, 11);
   color: rgb(255, 255, 255);
@@ -73,13 +53,6 @@ body {
   letter-spacing: -1px;
 }
 
-.inputSearch {
-  margin-left: 10px;
-  padding: 5px;
-  border: 1px solid #0533af;
-  border-radius: 4px;
-}
-
 .selectTemplate {
   margin-left: 10px;
   border-radius: 2px;
@@ -95,13 +68,4 @@ body {
   padding: 2px;
   margin: 4px;
   font-weight: bold;
-}
-
-.inputSearch {
-  margin-bottom: 2rem;
-}
-
-.inputSearch {
-  font-weight: bold;
-  color: rgb(0, 0, 0);
 }
